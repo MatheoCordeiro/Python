@@ -1,0 +1,59 @@
+def calc():
+    entrada = int(input('Escolha uma operação\n 1 - Adição\n 2 - Subtração\n 3 - Divisão\n 4 - Multiplicação\n 5 - Potenciação\n 6 - Radiciação\n 7 - Equação do 2º grau\n'))
+    while( entrada <= 0 or entrada >= 8):
+        print('Desculpe, nós só temos sete operações disponíveis')
+        entrada = int(input("Por favor, Insira um número válido"))
+    else:
+        if entrada == int(1):
+            a = int(input('Insira o primeiro valor:\n'))
+            b = int(input('Insira o valor a ser somado:\n'))
+            a = a + b
+            print('O valor dessa somatória é:', a)
+        elif entrada == int(2):
+            a = int(input('Insira o primeiro valor:\n'))
+            b = int(input('Insira o valor a ser subtraído:\n'))
+            a = a - b
+            print('O resultado da sua subtração é:', a)
+        elif entrada == int(3):
+            a = int(input('Insira o dividendo:\n'))
+            b = int(input('Insira o divisor:\n'))
+            c = a / b
+            a = a % b
+            print('O quociente é igual a:', c, "\nE o resto é:", a)
+        elif entrada == int(4):
+            a = int(input('Insira o valor a ser multiplicado:\n'))
+            b = int(input('Insira o valor do multiplicador:\n'))
+            a = a * b
+            print('O produto dessa multiplicação é:', a)
+        elif entrada == int(5):
+            a = int(input('Insira a base:\n'))
+            b = int(input('Insira o expoente:\n'))
+            a = a ** b
+            print('O resultado dessa potenciação é:', a)
+        elif entrada == int(6):
+            a = int(input('Insira o radicando:\n'))
+            b = int(input('Insira o indíce:\n'))
+            a = int(a ** (1 / b)) + 1
+            print('A raiz desse desse indíce é:', a)
+        elif entrada == 7:
+            equacao()
+        final()
+def equacao():
+    a = int(input('Insira o valor de A:\n'))
+    b = int(input('Insira o valor de B:\n'))
+    c = int(input('Insira o valor de C:\n'))
+    c = int((b ** 2)-(4 * c * a))
+    x = float(((-b + c ** (1 / 2))) / (2 * a))
+    x_ = float((-b - c ** (1 / 2)) / (2 * a))
+    print('x é igual a:', str(x))
+    print('x_ é igual a:', str(x_))
+def final():
+    acao = int(input('Para realizar outra operação, digite 1. Para sair, digite 2:\n'))
+    while( acao <= 0 or acao >=3 ):
+        acao = int(input("Por favor, Insira um número válido"))
+    else:
+        if acao == 1:
+            calc()
+        elif acao == 2:
+            print('Obrigado pela preferência')
+calc()
